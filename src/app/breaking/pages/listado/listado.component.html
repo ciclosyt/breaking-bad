@@ -1,0 +1,23 @@
+<h1>Listado de personajes Breaking Bad</h1>
+<mat-divider></mat-divider>
+<br>
+
+ <div v-else="lista"
+    fxLayout="row wrap"
+    fxLayout.xs="column"
+     fxLayoutAlign="center"
+     fxLayoutGap="20px">
+
+    <div fxFlex="20"
+          fxFlex.lg="15"
+          fxFlex.sm="30"   
+        *ngFor="let item of lista">
+
+        <app-bad-card [item]="item"></app-bad-card>
+
+    </div>
+
+    
+</div> 
+
+

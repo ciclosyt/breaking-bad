@@ -1,0 +1,26 @@
+<mat-card >
+    <mat-card-header>
+        <mat-card-title>
+            {{ item.name }}
+        </mat-card-title>
+        <mat-card-subtitle>
+            Apodo: {{ item.nickname }}
+        </mat-card-subtitle>
+    </mat-card-header>
+
+    <img mat-card-image [src]="item.img">
+
+    <mat-card-content>
+        <h3>Cumpleaños</h3>
+        <p><strong>{{ item.birthday }}</strong></p>
+    </mat-card-content>
+
+    <mat-card-actions>
+        <button mat-button 
+                color="warn"
+                [routerLink]="['/breaking', item.char_id]">
+            Saber más
+        </button>
+    </mat-card-actions>
+
+</mat-card>

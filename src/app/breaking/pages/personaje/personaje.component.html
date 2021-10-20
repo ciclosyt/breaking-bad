@@ -1,0 +1,51 @@
+ <mat-grid-list cols="1"
+                *ngIf="!person; else divItem">
+
+    <mat-grid-tile>
+        <mat-spinner></mat-spinner>
+    </mat-grid-tile>
+
+</mat-grid-list>
+
+<ng-template #divItem>
+
+    <div fxLayout="row"
+            fxLayout.xs="column"
+            fxLayoutGap="30px">
+
+            <div fxFlex="50"
+                    *ngFor="let item of person">
+
+                    <h2>{{item.name}}</h2>
+
+                <mat-divider></mat-divider>
+                <br>
+                <img [src]="item.img">
+
+            </div>
+
+            <div fxFlex="50"
+            *ngFor="let item of person">
+                <h2> Profesion: {{ item.occupation }}</h2>
+                <mat-divider></mat-divider>
+                <mat-list>
+                    <mat-list-item>
+                        Temporadas: {{ item.appearance }}
+                    </mat-list-item>
+                    <mat-list-item>
+                        Nombre del Actor: {{ item.portrayed }}
+                    </mat-list-item>
+                    <mat-list-item>
+                        Estado actual: {{ item.status }}
+                    </mat-list-item>
+                </mat-list>
+                <br>
+
+                <button mat-button color="warn" (click)="regresar()">
+                    Regresar
+                </button>
+            </div>
+
+    </div>
+
+</ng-template> 
